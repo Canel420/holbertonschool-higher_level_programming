@@ -20,7 +20,7 @@ int check_Pal(listint_t **left, listint_t *right)
 	if (right == NULL)
 		return (1);
 
-	res = check_Pal(left, right->next) && ((*left)->data == right->data);
+	res = check_Pal(left, right->next) && ((*left)->n == right->n);
 	(*left) = (*left)->next;
 
 	return (res);
@@ -38,5 +38,5 @@ int check_Pal(listint_t **left, listint_t *right)
 
 int is_palindrome(listint_t **head)
 {
-	return (check_Pal(&head, head));
+	return (check_Pal(head, *head));
 }
