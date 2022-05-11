@@ -6,18 +6,19 @@
 #include <string.h>
 
 /**
- * struct node - Structure for doubly linked list
- * @n: data
- * @next: Pointer to the next node
- * @prev: Pointer to previous node
+ * struct dlistint_s - doubly linked list
+ * @n: integer
+ * @prev: points to the previous node
+ * @next: points to the next node
  *
- * Description: Doubly linked list node structure
+ * Description: doubly linked list node structure
+ *
  */
-typedef struct node
+typedef struct dlistint_s
 {
-	int n;
-	struct node *next;
-	struct node *prev;
+    int n;
+    struct dlistint_s *prev;
+    struct dlistint_s *next;
 } dlistint_t;
 
 size_t print_dlistint(const dlistint_t *h);
