@@ -7,29 +7,46 @@ class Square:
     """
     Class square
 
-    Attributes
+    Parameters
     ----------
     size: int
-        the side size of the square
-    Raises
-        ------
-        TypeError: if size is not integer type
-        ValueError: if size is  < 0
-
+          the side size of the square
     """
     def __init__(self, size=0):
         """
+        Instansiation of the square
+
+        """
+        self.__size = size
+
+    @property
+    def size(self):
+        """
+        Getter of size parameter
+
+        Returns
+        -------
+           Side size of square
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, val):
+        """
+        Setter of size
+
         Parameters
         ----------
-        size: int
-           the side size of the square
+        value: int
+               side size of square
         """
-        if type(size) is not int:
+
+        if type(val) is not int:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif val < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = size
+            self.__size = val
 
     def area(self):
         """
