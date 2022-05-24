@@ -8,3 +8,4 @@ Object-oriented programming is a paradigm that provides a means of structuring p
 # Contents
 0. 0-square.py
 1. 1-square.py
+2. 2-square.py
