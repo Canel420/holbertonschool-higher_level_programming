@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+""" Class that defines a square of a given size """
+
 
 class Square:
     """
-    Class that defines a square of a given size
+    Class square
 
     Attributes
     ----------
