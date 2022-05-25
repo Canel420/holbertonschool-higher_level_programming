@@ -74,6 +74,10 @@ class Square:
         ----------
         value: tuple
                position to draw square
+
+        Raises
+        ------
+        TypeError: position must be a tuple of 2 positive integers
         """
         if type(value) is not tuple or len(value) != 2 or \
            type(value[0]) is not int or value[0] < 0 or \
@@ -100,11 +104,11 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
+            for i in range(self.position[1]):
                 print()
-            for i in range(self.__size):
-                for k in range(self.__position[0]):
-                    print(end=" ")
-                for j in range(self.__size):
+            for i in range(self.size):
+                for k in range(self.position[0]):
+                    print(" ")
+                for j in range(self.size):
                     print("#", end='')
                 print()
