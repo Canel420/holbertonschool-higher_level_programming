@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-""" Class that defines a square of a given size """
+""" Class that defines a square of a given size in a given position """
 
 
 class Square:
