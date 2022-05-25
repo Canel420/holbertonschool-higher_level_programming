@@ -12,3 +12,4 @@ Object-oriented programming is a paradigm that provides a means of structuring p
 3. 3-square.py
 4. 4-square.py
 5. 5-square.py
+6. 6-square.py
