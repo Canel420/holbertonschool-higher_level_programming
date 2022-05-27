@@ -1,0 +1,81 @@
+==================================
+Test session for 0-add_integer.py
+==================================
+This module only contains one function:
+* add_integer()
+
+Importing function from module.
+
+>>> add_integer = __import__("0-add_integer").add_integer
+
+' Positive integers '
+>>> add_integer(1, 2)
+3
+
+
+' Negative integers '
+>>> add_integer(-1, -2)
+-3
+
+
+' Only first integer given '
+>>> add_integer(1)
+99
+
+
+' Second parameter not given '
+>>> add_integer(1, )
+99
+
+
+' Function without parameters '
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+
+' String as first parameter '
+>>> add_integer("str", 3)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+' Floating points as parameters '
+>>> add_integer(1.5, 1.5)
+2
+
+
+' Negative floating points'
+>>> add_integer(-1.5, -1.5)
+-2
+
+
+' Complex values '
+>>> add_integer(complex(1, 2), 1)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+' Range as one parameter '
+>>> add_integer(1, range(2))
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+' None as one parameter '
+>>> add_integer(None, )
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+' Boolean parameter '
+>>> add_integer(1, True)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
