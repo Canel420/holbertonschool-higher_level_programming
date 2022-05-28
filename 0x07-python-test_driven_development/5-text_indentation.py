@@ -31,6 +31,3 @@ def text_indentation(text):
         string = string.replace('\n ', '\n')
 
     print(string, end='')
-
-
-text_indentation("Arthur didn't feel very good. He woke up blearily.")
