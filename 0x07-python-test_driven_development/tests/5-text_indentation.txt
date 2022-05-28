@@ -1,0 +1,19 @@
+=======================================
+Test session for 5-text_indentation.py
+=======================================
+This module contains one function:
+* text_indentation
+
+Importing function from module
+
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+' String text '
+>>> text_indentation("Arthur didn't feel very good. He woke up blearily") #doctest: +NORMALIZE_WHITESPACE
+Arthur didn't feel very good.
+
+He woke up blearily.
+
+
+
+
