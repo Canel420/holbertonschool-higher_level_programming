@@ -6,7 +6,7 @@ This module contains ine function:
 
 Importing function from module
 
->>> __import__("3-say_my_name").say_my_name
+>>> say_my_name = __import__("3-say_my_name").say_my_name
 
 ' String names '
 >>> say_my_name("Arthur", "Dent")

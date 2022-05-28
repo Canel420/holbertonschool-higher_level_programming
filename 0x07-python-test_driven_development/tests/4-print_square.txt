@@ -4,6 +4,11 @@ Test session for 4-print_square
 This module contains one function:
 * print_square()
 
+Importing function from module
+
+print_square = __import__("4-print_square").print_square
+
+
 ' Positive integer size '
 >>> print_square(4)
 ####

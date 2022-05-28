@@ -6,7 +6,7 @@ The module contains one function:
 
 Importing function from module.
 
->>> __import__("2-matrix_divided").matrix_divided
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 
 ' Matrix of positive integers '
 >>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3)
