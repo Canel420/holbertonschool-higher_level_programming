@@ -42,12 +42,3 @@ integers/floats")
 
     return list(map(lambda row: list(map(lambda x: round((x / div), 2), row)),
                 matrix))
-
-
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-print(matrix_divided(matrix, ))
-print(matrix)
