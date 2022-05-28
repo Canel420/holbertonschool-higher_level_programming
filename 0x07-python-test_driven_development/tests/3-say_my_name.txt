@@ -1,0 +1,55 @@
+==================================
+Test session for 3-say_my_name.py
+==================================
+This module contains ine function:
+* say_my_name()
+
+Importing function from module
+
+>>> __import__("3-say_my_name").say_my_name
+
+' String names '
+>>> say_my_name("Arthur", "Dent")
+My name is Arthur Dent
+
+
+' First name only '
+>>> say_my_name("Ford")
+My name is Ford
+
+
+' First name only '
+>>> say_my_name("Tricia", )
+My name is Tricia
+
+
+' Missing first name '
+>>> say_my_name(, "Prefect")
+SyntaxError: invalid syntax
+
+' Missing both parameters '
+>>> say_my_name()
+Traceback (most recent call last):
+...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+' Number as first name '
+>>> say_my_name(42, "Hitchhiker")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+' Number as second name '
+>>> say_my_name("Marvin", 42)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+
+' More than one parameter '
+>>> say_my_name("Marvin", "Paranoid", "Android")
+Traceback (most recent call last):
+...
+TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given

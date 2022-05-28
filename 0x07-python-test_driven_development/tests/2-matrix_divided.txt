@@ -1,0 +1,103 @@
+=====================================
+Test session for 2-matrix_divided.py
+=====================================
+The module contains one function:
+* matrix_divided()
+
+Importing function from module.
+
+>>> __import__("2-matrix_divided").matrix_divided
+
+' Matrix of positive integers '
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3)
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+' Matrix of negative integers'
+>>> matrix_divided([[-1, -2, -3], [-4, -5, -6], [-7, -8, -9]], 3)
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0], [-2.33, -2.67, -3.0]]
+
+
+' Matrix elements divided by 0 '
+>>> matrix_divided([[-1, -2, -3], [-4, -5, -6], [-7, -8, -9]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+
+' Matrix of float values '
+>>> matrix_divided([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], 3)
+[[0.03, 0.07, 0.1], [0.13, 0.17, 0.2], [0.23, 0.27, 0.3]]
+
+
+' Division by floating value '
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 0.01)
+[[100.0, 200.0, 300.0], [400.0, 500.0, 600.0], [700.0, 800.0, 900.0]]
+
+
+' Matrix with string elements '
+>>> matrix_divided([[1, 'Holberton', 3], [4, 'Rocks', 6], [7, 8, 9]], 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+' Matrix with list elements '
+>>> matrix_divided([[1, [14, 20, 42], 3], [4, 5, 6], [7, 8, 9]], 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+' Matrix with complex elements ' 
+>>> matrix_divided([[1, complex(1, 2), 3], [4, 5, 6], [7, 8, 9]], 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+' Matrix is not squared '
+>>> matrix_divided([[1, 2, 3, 4], [4, 5, 6], [7, 8, 9]], 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+' Matrix is empty'
+>>> matrix_divided([], 3)
+[]
+
+' Matrix has a missing extra element '
+>>> matrix_divided([[1, 2, 3, ], [4, 5, 6], [7, 8, 9]])
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0], [2.33, 2.67, 3.0]]
+
+
+' Matrix has boolean elements '
+>>> matrix_divided([[1, 2, 3], [True, 5, 6], [False, 8, 9]], 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+' Division by string '
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 'Holbie')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+
+' Division by list '
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [2, 4, 6])
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+' Division by boolean value '
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], True)
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+
+' Dividend missing '
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], )
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'

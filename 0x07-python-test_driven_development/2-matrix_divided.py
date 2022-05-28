@@ -8,7 +8,7 @@
 
 def matrix_divided(matrix, div):
     """
-    Division of eache element in matrix
+    Division of each element in matrix
 
     Parameters
     ----------
@@ -18,6 +18,14 @@ def matrix_divided(matrix, div):
     Returns
     -------
     New matrix with element divided
+
+    Raises
+    ------
+    TypeError: if matrix elements or div parameter are not
+               type integer/float, or if is not a squared
+               matrix.
+    ZeroDivisionError: if div parameter is zero.
+
     """
     if div == 0:
         raise ZeroDivisionError("division by zero")
@@ -38,7 +46,8 @@ integers/floats")
 
 matrix = [
     [1, 2, 3],
-    [4, 5, 6]
+    [4, 5, 6],
+    [7, 8, 9]
 ]
-print(matrix_divided(matrix, 3))
+print(matrix_divided(matrix, ))
 print(matrix)
