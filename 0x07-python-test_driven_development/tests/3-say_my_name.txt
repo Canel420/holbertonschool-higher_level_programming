@@ -14,17 +14,19 @@ My name is Arthur Dent
 
 
 ' First name only '
->>> say_my_name("Ford")
+>>> say_my_name("Ford") #doctest: +NORMALIZE_WHITESPACE
 My name is Ford
 
 
 ' First name only '
->>> say_my_name("Tricia", )
+>>> say_my_name("Tricia", ) #doctest: +NORMALIZE_WHITESPACE
 My name is Tricia
 
 
 ' Missing first name '
 >>> say_my_name(, "Prefect")
+Traceback (most recent call last):
+...
 SyntaxError: invalid syntax
 
 ' Missing both parameters '
