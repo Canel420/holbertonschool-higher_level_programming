@@ -16,4 +16,19 @@ He woke up blearily.
 <BLANKLINE>
 
 
+' Three special characters '
+>>> text_indentation(". . .")
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+
+
+' Number as text '
+>>> text_indentation(42)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
 
