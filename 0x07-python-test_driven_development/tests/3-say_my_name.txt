@@ -55,3 +55,24 @@ TypeError: last_name must be a string
 Traceback (most recent call last):
 ...
 TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+
+' List as parameter '
+>>> say_my_name("Prefect", ["Random", "Benavides"])
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+
+' Set as parameter '
+>>> say_my_name("Zaphod", {'a', 'b'})
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+
+' Dict as parameter '
+>>> say_my_name({"Ford": "Prefect", "Zaphod": "Beeblebrox"}, "Hitchhikers")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
