@@ -18,14 +18,29 @@ Importing function from module.
 -3
 
 
+' Positive and negative integers'
+>>> add_integer(1, -2)
+-1
+
+
 ' Only first integer given '
 >>> add_integer(1)
 99
 
 
+' Long integer '
+>>> add_integer(333333333333333333333333333333333333, 1)
+333333333333333333333333333333333334
+
+
 ' Second parameter not given '
 >>> add_integer(1, )
 99
+
+
+' Multiple parameters passed '
+>>> [add_integer(i, i + 2) for i in range(4)]
+[2, 4, 6, 8]
 
 
 ' Function without parameters '
@@ -50,6 +65,11 @@ TypeError: a must be an integer
 ' Negative floating points'
 >>> add_integer(-1.5, -1.5)
 -2
+
+
+' Floating and integers parameters '
+>>> add_integer(2, 2.5)
+4
 
 
 ' Complex values '
@@ -79,3 +99,23 @@ Traceback (most recent call last):
 ...
 TypeError: b must be an integer
 
+
+' More than two parameters '
+>>> add_integer(1, 2, 3)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+
+' Impossible integer '
+>>> add_integer(1, 4/0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+
+' Not a number as parameter '
+>>> add_integer(1, float("NaN"))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
