@@ -63,3 +63,17 @@ TypeError: size must be an integer
 Traceback (most recent call last):
 ...
 SyntaxError: invalid syntax
+
+
+' Boolean size '
+>>> print_square(True)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+
+' Tuple size '
+>>> print_square((2, -2))
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
