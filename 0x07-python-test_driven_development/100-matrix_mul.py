@@ -37,8 +37,8 @@ def check_matrix(matrix, name):
                                             "integers or floats")
             elif type(row) is not list:
                 raise TypeError(name + " must be a list of lists")
-            elif len(row) != len(matrix[0]):
-                raise TypeError("each row of " + name + "must be of the " +
+            if len(row) != len(matrix[0]):
+                raise TypeError("each row of " + name + " must be of the " +
                                 "same size")
     else:
         raise TypeError(name + " must be a list")
@@ -73,7 +73,3 @@ def matrix_mul(m_a, m_b):
         return (result)
     else:
         raise ValueError("m_a and m_b can't be multiplied")
-
-
-print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-print(matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
