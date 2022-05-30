@@ -26,9 +26,52 @@ He woke up blearily.
 <BLANKLINE>
 
 
+' Special characters '
+>>> text_indentation("@.*:%?")
+@.
+<BLANKLINE>
+*:
+<BLANKLINE>
+%?
+<BLANKLINE>
+
+
+' Many spaces '
+>>> text_indentation("          .          ") #doctest: +NORMALIZE_WHITESPACE
+          .
+<BLANKLINE>
+
+
 ' Number as text '
 >>> text_indentation(42)
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
 
+
+' Text is a boolean '
+>>> text_indentation(False)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+
+' Text is a float '
+>>> text_indentation(float("NaN"))
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+
+' Text is empty '
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+' Text is a set '
+>>> text_indentation({"This", "is", "a", "set"})
+Traceback (most recent call last):
+...
+TypeError: text must be a string
