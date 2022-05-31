@@ -1,7 +1,7 @@
 ===================================
 Test session for 100-matrix_mul.py
 ===================================
-This module contains two functions:
+This module contains one functions:
 * matrix_mul()
 
 Importing functions from module
@@ -40,7 +40,7 @@ Traceback (most recent call last):
 TypeError: m_a should contain only integers or floats
 
 
-' Matrix with differen row length '
+' Matrix with different row length '
 >>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
 ...
