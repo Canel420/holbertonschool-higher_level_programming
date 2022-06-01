@@ -115,3 +115,31 @@ TypeError: m_b must be a list of lists
 Traceback (most recent call last):
 ...
 TypeError: m_b must be a list
+
+
+' One number list ' 
+>>> matrix_mul([1], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
+
+
+' Empty matrix '
+>>> matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+
+' List of non numbers '
+>>> matrix_mul([[1, 2], [3, 4]], [["NaN", "NaN"], ["NaN", "NaN"]])
+Traceback (most recent call last):
+...
+TypeError: m_b should contain only integers or floats
+
+
+' Matrix of different size rows '
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [1]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must be of the same size
