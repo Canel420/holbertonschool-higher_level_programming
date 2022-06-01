@@ -20,6 +20,50 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
+    @classmethod
+    def square(cls, size=0):
+        """
+        Define a square
+
+        Parameters
+        ----------
+        size: Side size of quare
+
+        Return
+        ------
+        Square pattern
+        """
+        return cls(size, size)
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Determines the bigger rectangle
+        based on area.
+
+        Parameters
+        ----------
+        rect_1: First rectangle.
+        rect_2: Second rectangle.
+
+        Returns
+        -------
+        Bigger rectangle
+
+        Raises
+        ------
+        TypeError: if rectangle is not type Rectangle.
+
+        """
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_2.area() > rect_1.area():
+            return rect_2
+        else:
+            return rect_1
+
     def __init__(self, width=0, height=0):
         """
         Constructs the necessary attributes
@@ -122,46 +166,4 @@ class Rectangle:
         """
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """
-        Determines the bigger rectangle
-        based on area.
-
-        Parameters
-        ----------
-        rect_1: First rectangle.
-        rect_2: Second rectangle.
-
-        Returns
-        -------
-        Bigger rectangle
-
-        Raises
-        ------
-        TypeError: if rectangle is not type Rectangle.
-
-        """
-        if type(rect_1) is not Rectangle:
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) is not Rectangle:
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_2.area() > rect_1.area():
-            return rect_2
-        else:
-            return rect_1
-
-    @classmethod
-    def square(cls, size=0):
-        """
-        Define a square
-
-        Parameters
-        ----------
-        size: Side size of quare
-
-        Return
-        ------
-        Square pattern
-        """
-        return cls(size, size)
+    
