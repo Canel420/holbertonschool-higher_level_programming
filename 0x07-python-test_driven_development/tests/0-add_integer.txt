@@ -119,3 +119,10 @@ ZeroDivisionError: division by zero
 Traceback (most recent call last):
 ...
 ValueError: cannot convert float NaN to integer
+
+
+' Infinity integer '
+>>> add_integer(1, float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
