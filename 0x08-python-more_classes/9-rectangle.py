@@ -20,40 +20,19 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
+
     @classmethod
     def square(cls, size=0):
         """
-        Define a square
-
-        Parameters
-        ----------
-        size: Side size of quare
-
-        Return
-        ------
-        Square pattern
+        Defines a square
         """
         return cls(size, size)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
-        Determines the bigger rectangle
-        based on area.
-
-        Parameters
-        ----------
-        rect_1: First rectangle.
-        rect_2: Second rectangle.
-
-        Returns
-        -------
-        Bigger rectangle
-
-        Raises
-        ------
-        TypeError: if rectangle is not type Rectangle.
-
+        Determines the biggest rectangle
+        based on area
         """
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -165,5 +144,3 @@ class Rectangle:
 
         """
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
-
-    
