@@ -33,6 +33,14 @@ class TestMaxInteger(unittest.TestCase):
         t_list = []
         self.assertEqual(max_integer(t_list), None, "Should be None")
 
+    def test_max_one(self):
+        """
+        Test case for a one element
+        list.
+        """
+        t_list = [1]
+        self.assertEqual(max_integer(t_list), 1, "Should be 1")
+
     def test_max_str(self):
         """
         Test case for a list of
@@ -89,6 +97,14 @@ class TestMaxInteger(unittest.TestCase):
         t_list = [4, 2, "420", 3]
         with self.assertRaises(TypeError):
             max_integer(t_list)
+
+    def test_max_middle(self):
+        """
+        Test case for max element in 
+        the middle of the list.
+        """
+        t_list = [1, 2, 6, 3, 4]
+        self.assertEqual(max_integer(t_list), 6, "Should be 6")
 
     def test_max_none(self):
         """
