@@ -3,7 +3,7 @@
 """ Class that defines a rectangle width and heigth """
 
 
-class Rectangle():
+class Rectangle:
     """
     Rectangle Class
 
