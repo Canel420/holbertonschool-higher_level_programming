@@ -98,5 +98,10 @@ class Rectangle():
     def __repr__(self):
         """
         Official representation of the rectangle.
+
+        Returns
+        -------
+        Rectangle official representation, name + measures.
+
         """
-        return ("Rectangle ({:d}, {:d})".format(self.__width, self.__height))
+        return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
