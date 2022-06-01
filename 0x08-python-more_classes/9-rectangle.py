@@ -6,16 +6,6 @@
 class Rectangle:
     """
     Rectangle Class
-
-    Attributes
-    ----------
-    width: width of the rectangle.
-    height: height of the rectangle.
-
-    Class Attributes
-    ----------------
-    number_of_instances: Amount of instances active.
-    print_symbol: Symbol to print rectangle pattern.
     """
     number_of_instances = 0
     print_symbol = "#"
