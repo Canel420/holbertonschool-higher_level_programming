@@ -4,6 +4,9 @@
 
 
 class MyList(list):
+    """
+    Define another list method
+    """
     def __init__(self):
         """ Initialize with base class method """
         super().__init__
