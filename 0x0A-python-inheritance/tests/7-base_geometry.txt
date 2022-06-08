@@ -77,6 +77,21 @@ Traceback (most recent call last):
 ...
 TypeError: dict must be an integer
 
+
+' Check type '
+>>> b.integer_validator("age", (4,))
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+
+
+' Check type None'
+>>> b.integer_validator("integer", None)
+Traceback (most recent call last):
+...
+TypeError: integer must be an integer
+
+
 ' Check arguments in integer_validator '
 >>> b.integer_validator("integer", 1, 2)
 Traceback (most recent call last):

@@ -18,6 +18,22 @@ True
 []
 
 
+' Check __str__ method '
+>>> my_list = MyList()
+>>> string = my_list.__str__
+
+
+' Check print return new list ' 
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 3]
+>>> print(my_list)
+[3, 1, 2]
+
+
 'Positive integers list'
 >>> my_list = MyList()
 >>> my_list.append(3)
