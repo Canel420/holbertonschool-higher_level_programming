@@ -43,12 +43,39 @@ Traceback (most recent call last):
 TypeError: integer must be an integer
 
 
-' Check another type '
+' Check float type '
 >>> b.integer_validator("float", 0.1)
 Traceback (most recent call last):
 ...
 TypeError: float must be an integer
 
+
+' Check bool type '
+>>> b.integer_validator("bool", False)
+Traceback (most recent call last):
+...
+TypeError: bool must be an integer
+
+
+' Check list type '
+>>> b.integer_validator("list", [1])
+Traceback (most recent call last):
+...
+TypeError: list must be an integer
+
+
+' Check set type '
+>>> b.integer_validator("set", {1})
+Traceback (most recent call last):
+...
+TypeError: set must be an integer
+
+
+' Check dict type '
+>>> b.integer_validator("dict", {'a': 1})
+Traceback (most recent call last):
+...
+TypeError: dict must be an integer
 
 ' Check arguments in integer_validator '
 >>> b.integer_validator("integer", 1, 2)
