@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
-from html.entities import name2codepoint
+""" Class BaseGeometry """
 
 
 class BaseGeometry:
