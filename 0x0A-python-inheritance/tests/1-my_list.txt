@@ -36,42 +36,6 @@ True
 [-3, -2, -1]
 
 
-' Floats list '
->>> my_list = MyList()
->>> my_list.append(0.3)
->>> my_list.append(0.1)
->>> my_list.append(0.2)
->>> my_list.print_sorted()
-[0.1, 0.2, 0.3]
-
-
-' String list ' 
->>> my_list = MyList()
->>> my_list.append('a')
->>> my_list.append('b')
->>> my_list.append('c')
->>> my_list.print_sorted()
-['a', 'b', 'c']
-
-
-' list of lists '
->>> my_list = MyList()
->>> my_list.append([])
->>> my_list.append([1])
->>> my_list.append([1, 2])
->>> my_list.print_sorted()
-[[], [1], [1, 2]]
-
-
-' list of sets '
->>> my_list = MyList()
->>> my_list.append({3, 2, 1})
->>> my_list.append({3})
->>> my_list.append({3, 2})
->>> my_list.print_sorted()
-[{3}, {2, 3}, {1, 2, 3}]
-
-
 ' method with arguments '
 >>> my_list = MyList()
 >>> my_list.print_sorted(2, 3)
