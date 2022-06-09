@@ -20,4 +20,4 @@ def pascal_triangle(n):
         for i in range(row - 1, 0, -1):  # fill in the row, right to left
             answer[i] += answer[i - 1]  # current computed from previous
 
-        print(*answer)
+        print(answer)
