@@ -20,5 +20,5 @@ class Student:
         """
         if attrs is None:
             return self.__dict__
-        return {key: value for key, value in self.__init__.items()
+        return {key: value for key, value in self.__dict__.items()
                 if key in attrs}
