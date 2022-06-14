@@ -20,3 +20,8 @@ class baseTest(unittest.TestCase):
         """ Test for 1 arg passed """
         b = Base(12)
         self.assertEqual(b.id, 12)
+
+    def test3(self):
+        """ Test for 2 no arg passed """
+        b = Base()
+        self.assertEqual(b.id, 2)
