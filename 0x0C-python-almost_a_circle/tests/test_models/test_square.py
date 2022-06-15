@@ -95,34 +95,33 @@ class squareTest(unittest.TestCase):
 
     def test_update_kwargs(self):
         """ Test for unordered arguments update """
-        R = Square(1, 1, 1, 1, 1)
-        R.update(id=2)
-        self.assertEqual(2, R.id)
-        R.update(x=3)
-        self.assertEqual(3, R.x)
-        R.update(width=5)
-        self.assertEqual(5, R.width)
-        R.update(y=7)
-        self.assertEqual(7, R.y)
-        R.update(height=9)
-        self.assertEqual(9, R.height)
+        S = Square(1, 1, 1, 1)
+        S.update(id=2)
+        self.assertEqual(2, S.id)
+        S.update(x=3)
+        self.assertEqual(3, S.x)
+        S.update(size=5)
+        self.assertEqual(5, S.size)
+        S.update(y=7)
+        self.assertEqual(7, S.y)
 
     def test_mix_args_kwargs(self):
         """ Testing for args and kwargs given """
-        R = Square(1, 1, 1, 1, 1)
-        R.update(2, 2, 2, id=3, x=3, y=3)
-        self.assertEqual(str(R), "[Square] (2) 1/1 - 2/2")
+        S = Square(1, 1, 1, 1)
+        S.update(2, 2, 2, id=3, x=3, y=3)
+        self.assertEqual(str(S), "[Square] (2) 2/1 - 2")
 
     def test_dict_repr(self):
         """ Test for dictionary representation """
         Base._Base__nb_objects = 0
 
-        R1 = Square(1, 1, 1, 1, 1)
-        D1 = R1.to_dictionary()
-        self.assertEqual(D1, {'id': 1, 'width': 1,
-                              'height': 1, 'x': 1, 'y': 1})
-        R2 = Square(2, 2)
-        D2 = R2.to_dictionary()
-        self.assertEqual(D2, {'id': 1, 'width': 2,
-                              'height': 2, 'x': 0, 'y': 0})
+        S1 = Square(1, 1, 1, 1)
+        D1 = S1.to_dictionary()
+        self.assertEqual(D1, {'id': 1, 'size': 1,
+                              'x': 1, 'y': 1})
+        S2 = Square(2, 2)
+        D2 = S2.to_dictionary()
+        self.assertEqual(D2, {'id': 1, 'size': 2,
+                              'x': 2, 'y': 0})
+
         self.assertEqual(type(D1), dict)
