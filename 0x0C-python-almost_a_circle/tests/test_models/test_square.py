@@ -80,3 +80,49 @@ class squareTest(unittest.TestCase):
         """ Test for string output """
         S = Square(1, 2, 3, 4)
         self.assertEqual("[Square] (4) 2/3 - 1", str(S))
+
+    def test_update_args(self):
+        """ Test for ordered argument update """
+        S = Square(1, 1, 1, 1)
+        S.update(2)
+        self.assertEqual(2, S.id)
+        S.update(5, 4)
+        self.assertEqual(4, S.size)
+        S.update(3, 6, 7)
+        self.assertEqual(7, S.x)
+        S.update(2, 6, 8, 3)
+        self.assertEqual(3, S.y)
+
+    def test_update_kwargs(self):
+        """ Test for unordered arguments update """
+        R = Square(1, 1, 1, 1, 1)
+        R.update(id=2)
+        self.assertEqual(2, R.id)
+        R.update(x=3)
+        self.assertEqual(3, R.x)
+        R.update(width=5)
+        self.assertEqual(5, R.width)
+        R.update(y=7)
+        self.assertEqual(7, R.y)
+        R.update(height=9)
+        self.assertEqual(9, R.height)
+
+    def test_mix_args_kwargs(self):
+        """ Testing for args and kwargs given """
+        R = Square(1, 1, 1, 1, 1)
+        R.update(2, 2, 2, id=3, x=3, y=3)
+        self.assertEqual(str(R), "[Square] (2) 1/1 - 2/2")
+
+    def test_dict_repr(self):
+        """ Test for dictionary representation """
+        Base._Base__nb_objects = 0
+
+        R1 = Square(1, 1, 1, 1, 1)
+        D1 = R1.to_dictionary()
+        self.assertEqual(D1, {'id': 1, 'width': 1,
+                              'height': 1, 'x': 1, 'y': 1})
+        R2 = Square(2, 2)
+        D2 = R2.to_dictionary()
+        self.assertEqual(D2, {'id': 1, 'width': 2,
+                              'height': 2, 'x': 0, 'y': 0})
+        self.assertEqual(type(D1), dict)
