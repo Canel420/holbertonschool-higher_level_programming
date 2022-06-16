@@ -14,6 +14,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ initialize base class """ 
         if id is not None:
             self.id = id
         else:
@@ -50,6 +51,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """ Creates a python object from dictionary """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
@@ -59,6 +61,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """ Loads a json file """
         filename = cls.__name__ + ".json"
         instance_list = []
         try:
@@ -86,7 +89,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """ csv object to python object. """
+        """ csv object to python object """
         filename = cls.__name__ + ".csv"
         objects = []
         try:
