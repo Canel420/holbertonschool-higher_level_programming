@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """ Base class  """
-from ctypes import py_object
 import json
 import csv
 
@@ -97,19 +96,19 @@ class Base:
                 reader = csv.reader(file)
                 for args in reader:
                     if cls.__name__ == 'Rectangle':
-                        py_object = {
+                        p_object = {
                             'id': int(args[0]),
                             'width': int(args[1]),
                             'height': int(args[2]),
                             'x': int(args[3]),
                             'y': int(args[4])}
                     elif cls.__name__ == 'Square':
-                        py_object = {
+                        p_object = {
                             'id': int(args[0]),
                             'size': int(args[1]),
                             'x': int(args[2]),
                             'y': int(args[3])}
-                    objs = cls.create(**py_object)
+                    objs = cls.create(**p_object)
                     objects.append(objs)
         except FileNotFoundError:
             pass
