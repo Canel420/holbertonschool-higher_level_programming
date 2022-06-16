@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """ Base class  """
+from ctypes import py_object
 import json
+import csv
 
 
 class Base:
@@ -26,16 +28,16 @@ class Base:
         return json.dumps(list_dictionaries)
 
     @classmethod
-    def save_to_file(cls, list_objs):
+    def save_to_file(cls, list_args):
         """
         writes the JSON string representation of
-        list_objs to a file.
+        list_args to a file.
         """
         filename = cls.__name__ + ".json"
         to_write = []
-        if list_objs is not None:
-            for objs in list_objs:
-                to_write.append(cls.to_dictionary(objs))
+        if list_args is not None:
+            for args in list_args:
+                to_write.append(cls.to_dictionary(args))
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(cls.to_json_string(to_write))
 
@@ -67,3 +69,45 @@ class Base:
         except FileNotFoundError:
             pass
         return instance_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_args):
+        """ Python object to csv object. """
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', encoding='utf-8', newline='') as f:
+            writer = csv.writer(f)
+            if cls.__name__ == 'Rectangle':
+                for args in list_args:
+                    writer.writerow([args.id, args.width,
+                                     args.heigth, args.x, args.y])
+            elif cls.__name__ == 'Square':
+                for args in list_args:
+                    writer.writerow([args.id, args.size, args.x, args.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ csv object to python object. """
+        filename = cls.__name__ + ".csv"
+        objects = []
+        try:
+            with open(filename, 'r', encoding='utf-8') as file:
+                reader = csv.reader(file)
+                for args in reader:
+                    if cls.__name__ == "Rectangle":
+                        py_object = {
+                            'id': int(args[0]),
+                            'width': int(args[1]),
+                            'height': int(args[2]),
+                            'x': int(args[3]),
+                            'y': int(args[4])}
+                    elif cls.__name__ == "Square":
+                        py_object = {
+                            'id': int(args[0]),
+                            'size': int(args[1]),
+                            'x': int(args[2]),
+                            'y': int(args[3])}
+                    objs = cls.create(**py_object)
+                    object.append(objs)
+        except FileNotFoundError:
+            pass
+        return objects
