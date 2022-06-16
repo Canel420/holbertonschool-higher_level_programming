@@ -79,7 +79,7 @@ class Base:
             if cls.__name__ == 'Rectangle':
                 for args in list_args:
                     writer.writerow([args.id, args.width,
-                                     args.heigth, args.x, args.y])
+                                     args.height, args.x, args.y])
             elif cls.__name__ == 'Square':
                 for args in list_args:
                     writer.writerow([args.id, args.size, args.x, args.y])
@@ -93,21 +93,21 @@ class Base:
             with open(filename, 'r', encoding='utf-8') as file:
                 reader = csv.reader(file)
                 for args in reader:
-                    if cls.__name__ == "Rectangle":
+                    if cls.__name__ == 'Rectangle':
                         py_object = {
                             'id': int(args[0]),
                             'width': int(args[1]),
                             'height': int(args[2]),
                             'x': int(args[3]),
                             'y': int(args[4])}
-                    elif cls.__name__ == "Square":
+                    elif cls.__name__ == 'Square':
                         py_object = {
                             'id': int(args[0]),
                             'size': int(args[1]),
                             'x': int(args[2]),
                             'y': int(args[3])}
                     objs = cls.create(**py_object)
-                    object.append(objs)
+                    objects.append(objs)
         except FileNotFoundError:
             pass
         return objects
