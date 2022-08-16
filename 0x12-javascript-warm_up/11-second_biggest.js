@@ -5,7 +5,7 @@ let big2 = 0;
 
 if (nums.length > 1) {
   nums.sort();
-  big2 = Number(nums[nums.length - 2]);
+  big2 = nums[nums.length - 2];
 }
 
 console.log(big2);
