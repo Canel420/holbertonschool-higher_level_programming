@@ -1,11 +1,10 @@
 #!/usr/bin/node
 
-const nums = process.argv.slice(2);
-let big2 = 0;
-
-if (nums.length > 1) {
-  nums.sort();
-  big2 = nums[nums.length - 2];
+const argv = process.argv;
+const argc = process.argv.length;
+if (argc < 4) {
+  console.log(0);
+} else {
+  const array = argv.slice(2).sort((a, b) => a - b).reverse();
+  console.log(array[1]);
 }
-
-console.log(big2);
