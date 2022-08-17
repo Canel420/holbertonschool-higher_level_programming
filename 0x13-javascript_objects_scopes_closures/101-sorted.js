@@ -3,9 +3,9 @@
 const dict = require('./101-data').dict;
 const dict2 = {};
 
-for (element in dict) {
-  if (!dict2[dict[element]]) {  
-    dict2[dict[element]] = []; 
+for (const element in dict) {
+  if (!dict2[dict[element]]) {
+    dict2[dict[element]] = [];
   }
   dict2[dict[element]].push(element);
 }
