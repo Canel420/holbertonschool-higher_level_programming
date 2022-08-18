@@ -1,21 +1,28 @@
 #!/usr/bin/node
-const request = require('request');
-const url = process.argv[2];
-let data;
-let movies = 0;
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    data = JSON.parse(body);
-    data.results.forEach(function (result) {
-      result.characters.forEach(function (character) {
-        const split = character.split('/');
-        if (split[split.length - 2] === '18') {
-          movies++;
+
+const axios = require('axios').default;
+const URL = process.argv[2];
+
+async function getCharacter() {
+  try {
+    const response = await axios.get(URL);
+    const data = response.data.results;
+    const characters = [];
+    for(let i = 0; i < data.length; i++) {
+      characters.push(data[i]['characters']);
+    }
+    let count = 0;
+    for (let j = 0; j < characters.length; j++) {
+      for (let k= 0; k < characters[j].length; k++) {
+        if (characters[j][k].includes('18')) {
+          count++;
         }
-      });
-    });
-    console.log(movies);
+      }
+    }
+    console.log(count);
+  } catch (error) {
+    console.error(error);
   }
-});
+}
+
+getCharacter();
