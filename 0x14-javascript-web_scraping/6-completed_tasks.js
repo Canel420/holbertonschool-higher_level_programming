@@ -1,24 +1,26 @@
 #!/usr/bin/node
 
-const request = require('request');
-const url = process.argv[2];
-let data;
-const dictionary = {};
+const axios = require('axios').default;
+const URL = process.argv[2];
 
-request(url, function (error, response, body) {
-  if (error) {
-    console.error(error);
-  } else {
-    data = JSON.parse(body);
-    data.forEach(function (result) {
-      if (result.completed === true) {
-        const userid = result.userId;
-        if (!(userid in dictionary)) {
-          dictionary[userid] = 0;
+async function getUserTasks () {
+  try {
+    const response = await axios.get(URL);
+    const data = response.data;
+    const tasks = {};
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].completed) {
+        if (data[i].userId in tasks) {
+          tasks[data[i].userId]++;
+        } else {
+          tasks[data[i].userId] = 1;
         }
-        dictionary[userid] += 1;
       }
-    });
-    console.log(dictionary);
+    }
+    console.log(tasks);
+  } catch (error) {
+    console.error(error);
   }
-});
+}
+
+getUserTasks();
