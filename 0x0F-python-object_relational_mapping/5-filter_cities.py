@@ -21,7 +21,6 @@ if __name__ == "__main__":
                 (SELECT id FROM states WHERE name LIKE BINARY %s)\
                 ORDER BY cities.state_id;", (argv[4], ))
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    print(", ".join(city[0] for city in rows))
     cur.close()
     db.close()
