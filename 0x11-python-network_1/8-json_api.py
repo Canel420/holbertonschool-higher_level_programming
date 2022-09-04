@@ -22,5 +22,5 @@ if __name__ == "__main__":
             print('No result')
         else:
             print('[{}] {}'.format(json_body['id'], json_body['name']))
-    except requests.exception.InvalidJSONError:
+    except requests.exception.RequestException:
         print('Not a valid JSON')
