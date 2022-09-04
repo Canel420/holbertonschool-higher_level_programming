@@ -1,6 +1,3 @@
 #!/bin/bash
-# script that makes a request to 
-# 0.0.0.0:5000/catch_me that causes 
-# the server to respond with a message
-# containing You got me!
+# script that makes a request to 0.0.0.0:5000/catch_me that causes the server to respond You got me!
 curl -sLX PUT "$1" -d "user_id=98" -H "Origin: HolbertonSchool" 
