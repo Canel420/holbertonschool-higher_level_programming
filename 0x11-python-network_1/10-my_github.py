@@ -13,11 +13,10 @@ from sys import argv
 if __name__ == "__main__":
     url = 'https://api.github.com/user'
     username = argv[1]
-    pwd = argv[2]
-    response = requests.get(url, auth=HTTPBasicAuth(username, pwd))
+    password = argv[2]
+    response = requests.get(url, auth=HTTPBasicAuth(username, password))
     print(response)
     try:
-        json_body = response.json()
-        print(json_body.get('id'))
+        print(response.json().get('id'))
     except ValueError:
         print(None)
