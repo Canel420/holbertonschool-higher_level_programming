@@ -12,4 +12,5 @@ from sys import argv
 if __name__ == "__main__":
     url = argv[1]
     response = requests.head(url)
-    print(response.headers['X-Request-Id'])
+    header = response.headers['X-Request-Id']
+    print(header)
